@@ -35,9 +35,7 @@ let Header:React.FC<HeaderType> = (props) =>{
         window.open("https://www.youtube.com/channel/UCWPJrKaf6BRimMAxV8LTMGw");
        
     }
-    let LogoutUser =()=>{
-        props.AuthenticationLogout()
-    }   
+     
     return(
         <div className={s.wrapper}>
                 <div className={s.header}>
