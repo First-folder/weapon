@@ -1,0 +1,38 @@
+.wrapper{
+    h1{
+        margin-bottom:30px;
+    }
+    .wrapper_item{
+        display: flex;
+       
+        .item{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 340px;
+            height: 176px;
+            background-color: #ef8940;
+            transition: 400ms ease-in-out;
+            text-decoration: none;
+            text-align: center;
+            font-size: 60px;
+            color: white;
+            cursor: pointer;
+            &:hover{
+                background-color: #ec6c11;; 
+                transition: 400ms ease-in-out;
+            }
+            small{
+                padding-top: 20px;
+                display: block;
+                font-size: 24px;
+                color: white;
+            }
+        }
+        .item:not(:last-child){
+            margin-right: 25px;
+        }
+    }
+
+}

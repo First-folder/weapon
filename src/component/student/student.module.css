@@ -1,0 +1,23 @@
+.wrapper_white {
+  width: 100%;
+  height: 100%;
+  background-color: antiquewhite;
+}
+.wrapper_black {
+  width: 100%;
+  height: 100%;
+  background-color: #130c03;
+}
+.stypeMap {
+  height: 400px;
+  width: 100%;
+}
+.newcoord {
+  width: 160px;
+  height: 40px;
+  background-color: var(--color-orange);
+  cursor: pointer;
+  color: var(--color-white);
+  border-radius: 3px;
+  text-align: center;
+}

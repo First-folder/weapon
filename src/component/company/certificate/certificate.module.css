@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  box-sizing: border-box;
+}
+.certificate_item {
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.certificate_item img {
+  height: 295px;
+  width: 200px;
+}

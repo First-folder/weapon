@@ -1,0 +1,108 @@
+.wrapper{
+    margin-top: 20px;
+    width: 100%;
+    height: 600px;
+    background-color: #2b2f32;
+    .content{
+        max-width: 1045px;
+        margin: auto;
+       // background-color: yellowgreen;
+      // border:2px solid
+    }
+    .helpFooter{
+        color: aliceblue;
+        width: inherit;
+        height: 130px;
+        background-color: #ec6c11;
+        div:not(:last-child){
+            margin-right:20px
+        }
+        .contentHelp{
+            padding-top: 30px;
+            margin: auto;
+            max-width: 1045px;   
+           // background-color: #804f25; 
+
+            display: flex;
+            justify-content: space-between;
+            .consultation{
+                small{
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+.question{
+    width: 130px;
+    height: 40px;
+    border: 2px solid silver;
+    text-align: center;
+    line-height: 38px;
+    cursor: pointer;
+}
+.contact{
+    color:white;
+    padding-top: 20px;
+    display: flex;
+    .adress{
+     
+        margin-right: 80px;
+    }
+    .phones{
+        text-align: right;
+        .item:not(:last-child){
+            padding-bottom: 7px;
+            .notes{
+                color:#808080;
+                font-size: 11px;
+                padding-top: 3px;
+            }
+            a{
+                position: relative;
+                &::after{
+                    position: absolute ;
+                    left: -25px;
+                    top: 3px;
+                    font-size: 22px;
+                    font-family: 'FontAwesome';
+                    content: "\f095";
+                 
+                    display: inline-block;
+                 
+                
+                    color: #ec6c11;
+                }
+            }
+        }
+        .call_bott{
+            margin-top: 20px;
+            width: 240px;
+            height: 46px;
+            border-radius: 5px;
+            border:1px solid #ec6c11;
+            color:#ec6c11;
+            text-align: center;
+            line-height: 44px;
+            cursor:pointer;
+            transition: 400ms ease-in-out;
+            &:hover{
+                color:white;
+                background-color: #ec6c11;
+                transition: 400ms ease-in-out;
+            }
+        }
+       
+    }
+}
+.content{
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    color:white;
+   
+}
+.navigation_company{
+  
+}

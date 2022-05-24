@@ -1,0 +1,13 @@
+.wrapper {
+  padding: 20px 0 0 20px;
+  display: flex;
+}
+.item {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.item a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}

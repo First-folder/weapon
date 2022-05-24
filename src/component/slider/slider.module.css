@@ -1,0 +1,53 @@
+.base {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: black;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+}
+.windowSlider {
+  width: 900px;
+  height: 506px;
+  background-color: black;
+  position: fixed;
+  left: calc(50% - 450px);
+  top: calc(50% - 253px);
+  overflow: hidden;
+}
+.item {
+  width: 900px;
+  height: 506px;
+  background-color: khaki;
+  float: left;
+  background-size: cover;
+}
+.inner {
+  width: 500%;
+  position: absolute;
+  left: 0;
+  transition: 400ms ease-in-out;
+}
+.size_but {
+  height: 30px;
+  width: 30px;
+  background-color: chocolate;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.next {
+  position: fixed;
+  right: calc(50% - 490px);
+  top: calc(50% - 15px);
+}
+.prev {
+  position: fixed;
+  left: calc(50% - 490px);
+  top: calc(50% - 15px);
+}
+.close {
+  position: fixed;
+  right: calc(50% - 490px);
+  top: calc(50% - 283px);
+}

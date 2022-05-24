@@ -1,0 +1,128 @@
+
+.back_fon{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 1;
+}
+.wrap_reg_auth{
+    position: fixed;
+    left:calc(50% - 410px);
+    top:calc(50% - 185px);
+    display: flex;
+    width: 840px;   
+    height: 375px; 
+    border-radius: 5px;
+    padding: 35px;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 10;
+
+}
+.auth_form{
+   width: 50%; 
+   display: block;
+   
+    div:not(:first-child){
+        label{
+            margin-top: 15px;  
+        }
+    }
+    div{        
+        label{
+            display: block;
+            margin-bottom: 15px;
+           
+        }
+        input{
+            width: 80%;
+            height: 36px;
+            font-size: 21px;
+            border-color: #e4e4e4;
+            &:active{
+                border-color: #f9870e;
+                outline: 0;
+                outline-offset: 0;
+            }
+            &:focus{
+                border-color: #f9870e;
+                box-shadow: 1px 1px 2px 0 #f9870e;
+                outline: 0;
+                outline-offset: 0;
+            }
+        }
+        small{
+            display: block;
+            color: #f9870e;
+            margin-top: 34px;
+            margin-bottom: 40px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+      
+       
+    }
+}
+.reg_form{
+    padding-top: 130px;
+    width: 50%;
+    .reg_button{
+        display: block;
+        width: 185px;
+        height: 40px;
+        background-color:var(--color-orange) ;
+        color: var(--color-white);
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 2.3;
+        text-decoration: none;       
+        font-size: 17px;
+        transition: 400ms ease-in-out;
+        &:hover{
+            background-color: var(--color-orange-white);
+            transition: 400ms ease-in-out;
+        }
+
+    }
+}
+.wrapper_auth{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+}
+.close_auth{
+    width: 25px;
+    height: 25px;
+   // background-color: #f9870e;
+    border-radius: 50%;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    color:var(--color-grey)
+}
+.enter{
+    margin-top:5px;
+    height: 40px;
+    width: 80px;
+    background-color: #f9870e;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 2.3;
+    letter-spacing: 2px;
+    font-size: 17px;
+    transition: 400ms ease-in-out;
+     &:hover{
+            background-color: var(--color-orange-white);
+            transition: 400ms ease-in-out;
+        }
+}

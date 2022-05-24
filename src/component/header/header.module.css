@@ -1,0 +1,138 @@
+:root {
+  --color-orange: #f9870e;
+  --color-orange-white: #f79e40;
+  --color-white: white;
+  --color-grey: #848484;
+}
+.wrapper {
+  height: 130px;
+  width: 100%;
+}
+.header {
+  height: 130px;
+  min-width: 1077px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemheader:nth-child(2) {
+  height: inherit;
+  width: 180px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+.itemheader:nth-child(2) .search {
+  color: var(--color-orange);
+}
+.itemheader:nth-child(2) .phone {
+  margin-top: 30px;
+}
+.itemheader:nth-child(2) .phone span {
+  font-size: 22px;
+  font-weight: 600;
+}
+.itemheader:nth-child(3) {
+  width: 230px;
+  height: 100%;
+  padding-top: 8px;
+  padding-left: 13px;
+}
+.itemheader:nth-child(3) .social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.itemheader:nth-child(3) .social .itemsocial {
+  height: 15px;
+  width: 20px;
+  cursor: pointer;
+  color: var(--color-orange);
+}
+.itemheader:nth-child(3) .social .itemsocial:not(:last-child) {
+  margin-right: 15px;
+}
+.itemheader:nth-child(4) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 7px;
+}
+.cart {
+  position: relative;
+  font-size: 25px;
+}
+.cart .cartcount {
+  position: absolute;
+  left: 15px;
+  top: -7px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #462e22;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+.cabinet,
+.cart {
+  color: var(--color-orange);
+  cursor: pointer;
+}
+.cabinet span,
+.cart span {
+  color: black;
+}
+.cabinet a,
+.cart a {
+  text-decoration: none;
+  color: #f9870e;
+}
+.cabinet {
+  margin-bottom: 40px;
+}
+.data_user {
+  height: 85%;
+  display: flex;
+  cursor: pointer;
+}
+.data_user .photo_user {
+  height: 25px;
+  padding-top: 3px;
+  font-size: 22px;
+  color: #f9870e;
+  padding-left: 5px;
+}
+.data_user .photo_user a {
+  display: flex;
+  text-decoration: none;
+  color: var(--color-orange);
+}
+.data_user .photo_user .icon_user {
+  display: block;
+}
+.data_user .photo_user small {
+  display: block;
+  padding-left: 5px;
+  padding-right: 7px;
+}
+.wrapper_data_user {
+  height: 90%;
+  display: flex;
+}
+.name_family {
+  display: flex;
+}
+.name_family div:nth-child(1) {
+  padding-left: 5px;
+  color: var(--color-orange);
+  font-size: 21px;
+}
+.name_family div:nth-child(1) span {
+  color: var(--color-orange);
+  display: inline-block;
+}

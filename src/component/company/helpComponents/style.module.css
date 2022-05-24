@@ -1,0 +1,60 @@
+.circle {
+  min-height: 10px;
+  min-width: 10px;
+  background-color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 50%/50%;
+}
+.wrapperMarker {
+  display: flex;
+}
+.contentM {
+  position: relative;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+.contentM:before {
+  content: "";
+  position: absolute;
+  background-color: #462e22;
+  left: -17px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.contentMtwo {
+  position: relative;
+  margin-left: 40px;
+  padding-bottom: 10px;
+}
+.contentMtwo:before {
+  content: "";
+  position: absolute;
+  background-color: #462e22;
+  left: -17px;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.contentMthree {
+  position: relative;
+  margin-left: 60px;
+  padding-bottom: 10px;
+}
+.contentMthree:before {
+  content: "";
+  position: absolute;
+  background-color: #f31717;
+  left: -17px;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.contentBolt {
+  font-size: 16px;
+  font-weight: 650;
+}

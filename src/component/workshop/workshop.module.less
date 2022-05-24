@@ -1,0 +1,32 @@
+.wrapper{
+    max-width: 900px;
+    margin: auto;
+    padding-left:30px;
+  //  padding-top: 35px;
+    box-sizing: border-box;
+
+    
+    
+}
+.item:nth-child(1){
+    margin-top: 20px;
+    background-color: #462e22;
+    color: white;
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    border-bottom: 1px solid black;
+    &:hover:not(:nth-child(1)){
+        background-color: var(--color-orange);
+        color: var(--color-white);
+    }
+    div:first-child{
+        padding-left: 10px;
+    }
+}
+.adress{
+    text-align: center;
+    font-size: 25px;
+}

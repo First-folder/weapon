@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper {
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+}
+.wrapper img {
+  width: 356px;
+  height: 258px;
+}
+.wrapper .buttom_album {
+  width: 160px;
+  height: 36px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.wrapper .buttom_album p {
+  line-height: 14px;
+  text-align: center;
+  font-size: 14px;
+}

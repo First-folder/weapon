@@ -1,0 +1,15 @@
+ photoGallery: [...state.photoGallery.map(p => {
+                console.log("...state.photoGallery.map");               
+                if(p.nameAlbum == action.albumItems[0].name_album){
+                    debugger
+                    let arrTepm = {...p}
+                    action.albumItems.forEach(pi=>{
+                        arrTepm.items.push({id:pi.id,
+                                            link:pi.link})
+                    })
+              //  if(p.nameAlbum == action.albumItems[0].name_album){                     
+           //   action.albumItems.forEach(pi=>{
+                //  p.items.push({id:pi.id,
+                 //                link:pi.link})
+                  return arrTepm
+              }else return p})]

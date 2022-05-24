@@ -1,0 +1,35 @@
+.wrapper_news {
+  position: relative;
+}
+.wrapper_news img {
+  width: 90%;
+}
+.wrapper_news .topic {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  color: blanchedalmond;
+}
+.photo_front img {
+  width: 100%;
+}
+.photo_items {
+  display: flex ;
+  padding-left: 20px;
+}
+.photo_item {
+  width: 220px;
+  height: 300px;
+  overflow: hidden;
+}
+.photo_item img {
+  margin: -41px -156px -40px -30px;
+}
+.photo_item:not(:last-child) {
+  margin-right: 20px;
+}
+.wrapper_news_items {
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+}

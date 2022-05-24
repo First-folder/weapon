@@ -1,0 +1,137 @@
+.content_wrapper {
+  display: flex;
+}
+.activenav {
+  background-color: #f9870e;
+  color: white !important;
+}
+.menu {
+  min-width: 295px;
+  margin-right: 20px;
+}
+.menu ul li {
+  height: 48px;
+  border: 1px solid #e8e8e8;
+  line-height: 48px;
+  list-style: none;
+  width: inherit;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  height: 48px;
+  width: inherit;
+  padding-left: 20px;
+  display: block;
+}
+.menu ul li:hover {
+  color: white;
+  background-color: #f9870e;
+}
+.menu ul li:hover a {
+  color: inherit;
+}
+.header {
+  padding-top: 10px;
+}
+.header h1 {
+  font-size: 30px;
+}
+.wrapper {
+  display: flex;
+}
+.history {
+  display: flex;
+}
+.history .itemhistory:not(:last-child) {
+  padding-right: 35px;
+}
+.productSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.productSection a {
+  text-decoration: none;
+  color: black;
+}
+.productSection .item_product {
+  max-width: 308px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.productSection .item_product .wrapper_header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.productSection .item_product .wrapper_header .logo_product {
+  height: 60px;
+  width: 60px;
+  min-width: 50px;
+  border-radius: 50%;
+}
+.productSection .item_product .wrapper_header .logo_product img {
+  height: inherit;
+  width: inherit;
+}
+.productSection .item_product .wrapper_header .name_product {
+  padding-left: 40px;
+  box-sizing: border-box;
+  font-size: 25px;
+}
+.productSection .item_product .content_product {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.photo_complex {
+  display: flex;
+}
+.photo_complex_item {
+  margin-right: 35px;
+  display: block;
+  height: 307px;
+  width: 170px;
+  overflow: hidden;
+}
+.photo_complex_item img {
+  margin: -41px -156px -40px -30px;
+}
+a .photo_complex_item:not(:last-child) {
+  margin-right: 36px;
+}
+.frontimg {
+  width: 100%;
+}
+.frontimg img {
+  width: inherit;
+}
+.wrapper_article_item {
+  padding-top: 20px;
+  padding-left: 3%;
+  padding-right: 3%;
+  box-sizing: border-box;
+}
+.wrapper_all_articles {
+  display: flex;
+  padding-top: 20px;
+  padding-left: 3%;
+  padding-right: 3%;
+  box-sizing: border-box;
+}
+.wrapper_artile_Item {
+  margin-right: 10px;
+}
+.wrapper_artile_Item img {
+  height: 185px;
+}
+.wrapperAllComponents {
+  color: black;
+  width: 1048px;
+  margin: auto;
+}
+.wrapperContentCompany {
+  width: 745px;
+  margin: auto;
+}

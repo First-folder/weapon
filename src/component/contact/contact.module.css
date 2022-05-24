@@ -1,0 +1,72 @@
+.wrapeprItem {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 22px;
+}
+.wrapeprItem .item:not(:last-child) {
+  margin-right: 20px;
+}
+.wrapeprItem .item:nth-child(2) {
+  width: 190px;
+}
+.wrapeprItem .item:last-child {
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+}
+.wrapeprItem .item:last-child:hover {
+  display: inline-block;
+  color: #ec6c11;
+  transition: 400ms ease-in-out;
+}
+.wrapeprItem .item .adress {
+  position: relative;
+  padding-bottom: 22px;
+  padding-left: 18px;
+}
+.wrapeprItem .item .adress::after {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family: 'FontAwesome';
+  display: inline-block;
+  content: "\f041";
+  color: #ec6c11;
+  font-size: 20px;
+}
+.wrapeprItem .item .clock {
+  position: relative;
+  padding-bottom: 22px;
+  padding-left: 23px;
+}
+.wrapeprItem .item .clock::after {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family: 'FontAwesome';
+  display: inline-block;
+  content: "\f017";
+  color: #ec6c11;
+  font-size: 20px;
+}
+.wrapeprItem .item .contact {
+  position: relative;
+  padding-bottom: 22px;
+  padding-left: 26px;
+}
+.wrapeprItem .item .contact::after {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family: 'FontAwesome';
+  display: inline-block;
+  content: "\f0e0";
+  color: #ec6c11;
+  font-size: 20px;
+}
+.firstwrapper {
+  padding: 0 25px 0 25px;
+}
+.hunterMap {
+  padding-top: 20px;
+  width: 100%;
+}
