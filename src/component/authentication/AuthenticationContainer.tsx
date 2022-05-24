@@ -9,7 +9,7 @@ import { getAuthenticationFamilySelector, getAuthenticationMailSelector, getAuth
 import s from "./auth.module.css"
 
 type AuthenticationContainerType = {
-    ChangeViewLoginClose:()=>void
+   // ChangeViewLoginClose:()=>void
     Authentication:(login:string,pass:string)=>void
     auth:boolean
     name:string
@@ -17,7 +17,7 @@ type AuthenticationContainerType = {
     history:any
 }
 
-class AuthenticationContainer extends React.Component<any>{
+class AuthenticationContainer extends React.Component<AuthenticationContainerType>{
     componentDidMount(){      
     }
     componentDidUpdate(prevProps:AuthenticationContainerType){
@@ -68,7 +68,14 @@ class AuthenticationContainer extends React.Component<any>{
     }
 }
 
-let mapStateToProps = (state:AppStateType)=>({
+type mapStateToPropsType = {
+    auth    :   string
+    name    :   string
+    family  :   string
+    phone   :   string
+    mail    :   string
+}
+let mapStateToProps = (state:AppStateType):mapStateToPropsType => ({
     auth    :   getAuthenticationStatusSelector(state),
     name    :   getAuthenticationNameSelector(state),
     family  :   getAuthenticationFamilySelector(state),
