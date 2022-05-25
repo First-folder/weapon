@@ -92,7 +92,6 @@ let mapStateToProps = (state:AppStateType):mapStateToPropsType => ({
     mail    :   getAuthenticationMailSelector(state)
 
 })
-type composeType = RouteComponentProps<AuthenticationContainerType>
-type composeType = RouteComponentProps<AuthenticationContainerType>
+
 type composeType = RouteComponentProps<AuthenticationContainerType>
 export default compose<composeType>(connect(mapStateToProps,{Authentication : AuthThunk}),withRouter)(AuthenticationContainer)
