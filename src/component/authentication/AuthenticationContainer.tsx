@@ -9,8 +9,8 @@ import { getAuthenticationFamilySelector, getAuthenticationMailSelector, getAuth
 import s from "./auth.module.css"
 
 type AuthenticationContainerType = {
-   // ChangeViewLoginClose:()=>void
-   // Authentication:(login:string,pass:string)=>void
+    ChangeViewLoginClose:()=>void
+   Authentication:(login:string,pass:string)=>void
     auth:boolean
     name:string
     family:string   
@@ -31,7 +31,7 @@ class AuthenticationContainer extends React.Component<AuthenticationContainerTyp
 
     }
     changeEnter = ()=>{
-      //  this.props.Authentication(this.state.login,this.state.pass)
+        this.props.Authentication(this.state.login,this.state.pass)
        
     }
     onChangeLogin=(e:any)=>{
@@ -92,5 +92,6 @@ let mapStateToProps = (state:AppStateType):mapStateToPropsType => ({
     mail    :   getAuthenticationMailSelector(state)
 
 })
+type composeType = RouteComponentProps<AuthenticationContainerType>
 type composeType = RouteComponentProps<AuthenticationContainerType>
 export default compose<composeType>(connect(mapStateToProps,{Authentication : AuthThunk}),withRouter)(AuthenticationContainer)
