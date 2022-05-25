@@ -38,6 +38,13 @@ let obj10 = [
 
 },
 {part:{
+	path_search:"registration",
+	path_out:"/registration",
+	name:"Регистрация"
+}
+
+},
+{part:{
 	path_search:"workshop",
 	path_out:"/workshop",
 	name:"Оружейная мастерская"
@@ -146,12 +153,12 @@ export let createPathBreadCrumbs =(pathSite)=>{
 	console.log("mym path site");
 	console.log(pathSite);
 let    regex = /\/[А-Яа-я_A-Za-z0-9:%\s]+/g
-    
+    //доработать строку обработки URL
         let allPartPath = pathSite.match(regex);
-        allPartPath = allPartPath.map(p=>{
+     if(allPartPath != null) { allPartPath = allPartPath.map(p=>{
             p = p.replace(/^\//g,'');
             return p
-        })
+        })} else allPartPath="/"
 
 console.log("allPartPath");
 console.log(allPartPath);
@@ -257,6 +264,15 @@ curentLocation.push({name:"Главная",path:nameSite})
 						})
 					
 					}	
+					//registration
+					if(allPartPath[0]=="registration"){
+						p.part.elem.forEach((value,i)=>{
+							{curentLocation.push({name:value.name,path:p.part.path_out+value.path_out})}
+
+						})
+					
+					}	
+
 					}
 				}
 		}
