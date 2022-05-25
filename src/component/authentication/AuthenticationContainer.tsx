@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 import { connect } from "react-redux"
-import { NavLink, withRouter } from "react-router-dom"
+import { NavLink, withRouter, RouteComponentProps } from "react-router-dom"
 import { compose } from "redux"
 import { AuthThunk } from "../../redux/authentication"
 import { AppStateType } from "../../redux/reducer_store"
@@ -10,11 +10,12 @@ import s from "./auth.module.css"
 
 type AuthenticationContainerType = {
    // ChangeViewLoginClose:()=>void
-    Authentication:(login:string,pass:string)=>void
+   // Authentication:(login:string,pass:string)=>void
     auth:boolean
     name:string
     family:string   
     history:any
+    LoginWindowClose:()=>void
 }
 
 class AuthenticationContainer extends React.Component<AuthenticationContainerType>{
@@ -22,11 +23,15 @@ class AuthenticationContainer extends React.Component<AuthenticationContainerTyp
     }
     componentDidUpdate(prevProps:AuthenticationContainerType){
         // на главную страницу после авторизации
-        if(prevProps.auth != this.props.auth){this.props.history.push('/')}
+        if(prevProps.auth != this.props.auth){
+            //this.props.history.push('/')
+            this.props.LoginWindowClose()
+        
+        }
 
     }
     changeEnter = ()=>{
-        this.props.Authentication(this.state.login,this.state.pass)
+      //  this.props.Authentication(this.state.login,this.state.pass)
        
     }
     onChangeLogin=(e:any)=>{
@@ -49,10 +54,14 @@ class AuthenticationContainer extends React.Component<AuthenticationContainerTyp
                         <div> <label> Пароль:</label> <input placeholder={"Пароль"} value={this.state.pass} onChange={this.onChangePass}/> </div>
                         <div><small>Забыли пароль ?</small></div>
                         <div className={s.enter} onClick={this.changeEnter}> Вход </div>
-                        <NavLink  className={s.close_auth}  to={"/company"}><FontAwesomeIcon icon={['fas','window-close']}/></NavLink> 
+                        <div  className={s.close_auth} onClick={()=>{
+                            this.props.LoginWindowClose()
+                        }} ><FontAwesomeIcon icon={['fas','window-close']}/> </div> 
                     </div>
                     <div className={s.reg_form}> 
-                           <NavLink className={s.reg_button} to={'/registration'} > Зарегистрироваться </NavLink>
+                           <NavLink className={s.reg_button} to={'/registration'}  onClick={()=>{
+                               this.props.LoginWindowClose()
+                           }}> Зарегистрироваться </NavLink>
                            <div> <p>После регистрации на этом сайте Вам будет доступно отслеживание закав, личный кабинет и другие возможности</p></div>
                       
                     </div>
@@ -69,7 +78,7 @@ class AuthenticationContainer extends React.Component<AuthenticationContainerTyp
 }
 
 type mapStateToPropsType = {
-    auth    :   string
+    auth    :   boolean
     name    :   string
     family  :   string
     phone   :   string
@@ -83,4 +92,5 @@ let mapStateToProps = (state:AppStateType):mapStateToPropsType => ({
     mail    :   getAuthenticationMailSelector(state)
 
 })
-export default compose(connect(mapStateToProps,{Authentication : AuthThunk}),withRouter)(AuthenticationContainer)
+type composeType = RouteComponentProps<AuthenticationContainerType>
+export default compose<composeType>(connect(mapStateToProps,{Authentication : AuthThunk}),withRouter)(AuthenticationContainer)

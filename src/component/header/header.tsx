@@ -57,7 +57,9 @@ let Header:React.FC<HeaderType> = (props) =>{
                     </div>
                     {!props.auth?
                     <div className={s.itemheader}>
-                        <div className={s.cabinet} ><FontAwesomeIcon icon={['fas','door-open']}/> <span> <NavLink to={"/authentication"}> Вход </NavLink> </span> </div>
+                        <div className={s.cabinet} onClick={()=>{
+                            props.ChangeViewLoginOpen()
+                        }}><FontAwesomeIcon icon={['fas','door-open']}/> <span>  Вход  </span> </div>
                       
                      </div> :
                      <div className={s.wrapper_data_user}>
@@ -74,7 +76,7 @@ let Header:React.FC<HeaderType> = (props) =>{
                     }                   
                     
            </div>   
-       {/*   {props.viewlogin && <AuthenticationContainer/>  }     */}
+         {props.viewlogin && <AuthenticationContainer LoginWindowClose={props.ChangeViewLoginClose}/>  }     
         </div>
     )
 }

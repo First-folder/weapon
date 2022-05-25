@@ -30,10 +30,7 @@ import CartContainer from './component/cart/cartContainer';
 import { Mains } from './component/student/studets';
 import { withAuthRedirect } from './hoc/withAuthredirect';
 
-
-
 library.add(fab,faCheckSquare, faCoffee,fas)
-
 
 class App extends React.Component {
   componentDidMount(){
@@ -57,7 +54,7 @@ class App extends React.Component {
               <Route path={"/complex"} render={()=><ComplexContainer/>}  />
               <Route path={"/video"}   component={withAuthRedirect(VideoContainer)}  />
               <Route path={"/registration"} render={()=><RegistrationContainer/>}/>
-              <Route path = {"/authentication"} render={()=><AuthenticationContainer/>}/>
+             {/* <Route path = {"/authentication"} render={()=><AuthenticationContainer/>}/> */}
               <Route exact path = {"/personal"} render={()=><Personal/>}/>
               <Route exact path = {"/personal/profile"} component= {withAuthRedirect(ProfileContainer)}/>
               <Route exact path = {"/personal/profile/cart"} render={()=><CartContainer/>}/>
