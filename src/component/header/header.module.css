@@ -9,50 +9,50 @@
   width: 100%;
 }
 .header {
-  height: 130px;
+  height: inherit;
   min-width: 1077px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.itemheader:nth-child(2) {
+.itemheader:nth-child(3) {
   height: inherit;
   width: 180px;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 15px;
 }
-.itemheader:nth-child(2) .search {
+.itemheader:nth-child(3) .search {
   color: var(--color-orange);
 }
-.itemheader:nth-child(2) .phone {
+.itemheader:nth-child(3) .phone {
   margin-top: 30px;
 }
-.itemheader:nth-child(2) .phone span {
+.itemheader:nth-child(3) .phone span {
   font-size: 22px;
   font-weight: 600;
 }
-.itemheader:nth-child(3) {
+.itemheader:nth-child(4) {
   width: 230px;
   height: 100%;
   padding-top: 8px;
   padding-left: 13px;
 }
-.itemheader:nth-child(3) .social {
+.itemheader:nth-child(4) .social {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
 }
-.itemheader:nth-child(3) .social .itemsocial {
+.itemheader:nth-child(4) .social .itemsocial {
   height: 15px;
   width: 20px;
   cursor: pointer;
   color: var(--color-orange);
 }
-.itemheader:nth-child(3) .social .itemsocial:not(:last-child) {
+.itemheader:nth-child(4) .social .itemsocial:not(:last-child) {
   margin-right: 15px;
 }
-.itemheader:nth-child(4) {
+.itemheader:nth-child(5) {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -135,4 +135,50 @@
 .name_family div:nth-child(1) span {
   color: var(--color-orange);
   display: inline-block;
+}
+.smallmenu {
+  display: none;
+  width: 30px;
+  height: 30px;
+  color: var(--color-orange);
+}
+@media (max-width: 375px) {
+  .smallmenu {
+    display: block;
+  }
+  .wrapper {
+    height: 40px;
+  }
+  .header {
+    min-width: 375px;
+    justify-content: space-evenly;
+  }
+  .itemheader:nth-child(2) img {
+    width: 120px;
+  }
+  .itemheader:nth-child(3) {
+    width: 30px;
+    padding: 5px 5px 0 5px;
+  }
+  .itemheader:nth-child(4) {
+    width: auto;
+  }
+  .itemheader:nth-child(4) .social .itemsocial {
+    display: none;
+  }
+  .itemheader:nth-child(4) .adress {
+    display: none;
+  }
+  .phone {
+    display: none;
+  }
+  .searchlabel {
+    display: none;
+  }
+  .cabinet span {
+    display: none;
+  }
+  .cart {
+    font-size: 18px;
+  }
 }

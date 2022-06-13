@@ -11,3 +11,28 @@
   border-radius: 10px;
   margin-right: 30px;
 }
+@media (max-width: 375px) {
+  .headerh1 {
+    padding-left: 10px;
+    font-size: 20px;
+  }
+  .promo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .promo a .item {
+    margin-right: 0px;
+  }
+  .item {
+    width: 280px;
+    height: 220px;
+    border-radius: 7px;
+  }
+  .item img {
+    width: inherit;
+    height: inherit;
+  }
+  .item:nth-child(1) {
+    margin-bottom: 7px;
+  }
+}
