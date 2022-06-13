@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
-import { NavLink, Route, withRouter } from "react-router-dom"
+import { NavLink, Route, RouteComponentProps, withRouter } from "react-router-dom"
 import { compose } from "redux"
 import { CommentsItemsType, getCatalogSectionsThunk, getCatalogSubSectionsAddItemsThunk, getCatalogSubSectionThunk, ItemsType, SectionsType , subSectionsType} from "../../redux/catalog"
 import { AppStateType } from "../../redux/reducer_store"
@@ -141,13 +141,11 @@ type CatalogCaontainerType = {
     getSubSection:(idSubSection:number)=>void
     getAddItems:(nameSubSection:string)=>void
     setNewLocal:any
-    location_ganges:boolean
-    location:any
-    sections:Array<SectionsType>
-    match:any
+    location_ganges:boolean   
+    sections:Array<SectionsType>   
 }
 
-class CatalogCaontainer extends React.Component<CatalogCaontainerType>{
+class CatalogCaontainer extends React.Component<CatalogCaontainerComposeType>{
     componentDidMount(){             
         this.props.getSectionsAll();  
         console.log(this.props.match)        
@@ -226,7 +224,14 @@ class CatalogCaontainer extends React.Component<CatalogCaontainerType>{
          {/*  <Route path ="/catalog" render ={()=><BreadCrumbsContainer/>}/> */}
            <div className={s.contentItems}>
              <Catalog  sections ={this.props.sections} queryInsideID={this.queryInsideID} ViewSubSection={this.state.ViewSubSection} />
-             <Route exact path = {"/catalog/section/:id?"} render={()=><SubSection  queryInsideID={this.queryInsideID} subSections={this.state.SelectSubSection} getSubSection={this.props.getSubSection} id={this.state.IDnumber} getAddItems={this.props.getAddItems} queryData={this.queryDataProduct} setNewLocal={this.props.setNewLocal} />} />
+             <Route exact path = {"/catalog/section/:id?"} render={()=><SubSection               
+                                                                     queryInsideID={this.queryInsideID} 
+                                                                     subSections={this.state.SelectSubSection} 
+                                                                     getSubSection={this.props.getSubSection} 
+                                                                     id={this.state.IDnumber} 
+                                                                     getAddItems={this.props.getAddItems}
+                                                                     queryData={this.queryDataProduct} 
+                                                                     />} />
              <Route strict path = {"/catalog/section/:id?/:namesubsection?/b"} render={()=> <ProductItems getAddItems={this.props.getAddItems} sections={this.props.sections} queryInsideID={this.queryInsideID} queryData={this.queryDataProduct} seekItems={this.state.seekItems} />}/>
              <Route exact path = {"/catalog/section/:sectionId?/:subsectionId?/:productId?/view"} render={()=><ProductItemContainer smallNav={this.smallNav} />} />
              </div>
@@ -235,12 +240,17 @@ class CatalogCaontainer extends React.Component<CatalogCaontainerType>{
         )
     }
 }
+type mstp = {
+    sections:Array<SectionsType> 
+    location_ganges:boolean
 
-let mapStateToProps =(state:AppStateType)=>({
+}
+let mapStateToProps =(state:AppStateType):mstp=>({
     sections:getCatalogSectionsAllSelector(state),
     location_ganges: getMy_location_changes(state)
 })
-export default compose(connect(mapStateToProps,{getSectionsAll  : getCatalogSectionsThunk,
+type CatalogCaontainerComposeType = CatalogCaontainerType & RouteComponentProps
+export default compose<CatalogCaontainerComposeType>(connect(mapStateToProps,{getSectionsAll  : getCatalogSectionsThunk,
                                                 getSubSection   : getCatalogSubSectionThunk,
                                                 getAddItems     : getCatalogSubSectionsAddItemsThunk,
                                                 setNewLocal     : addLocationCrumbsThunk}),withRouter)(CatalogCaontainer)
