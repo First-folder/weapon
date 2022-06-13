@@ -10,14 +10,14 @@ let Footer:React.FC<FooterType> = (props)=>{
         <div className={s.wrapper}>
                 <div className={s.helpFooter}>
                             <div className={s.contentHelp}>
-                                    <div>
+                                    <div className={s.headerOne}>
                                         <div className={s.consultation}><small>Нужна</small></div>
                                         <div className={s.consultation}><small>Консультация ?</small></div>
                                     </div>
-                                    <div><p>Если у Вас есть сомнения или вопросы, Вы всегда можете обратиться за консультацией к <br/> нашим менеджерам</p></div>
-                                    <div>
-                                        <div className={s.question}>Задать вопрос</div>
-                                    </div>
+                                    <div className={s.contetntFooter}><p>Если у Вас есть сомнения или вопросы, Вы всегда можете обратиться за консультацией к <br/> нашим менеджерам</p></div>
+                                   
+                                    <div className={s.question}>Задать вопрос</div>
+                                    
                         </div>
                </div>
             <div className={s.content}>

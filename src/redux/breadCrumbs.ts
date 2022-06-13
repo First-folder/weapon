@@ -32,7 +32,7 @@ type AddLocationPathACtype = {
 
 type ThunkType = ThunkAction<Promise<void>,AppStateType,unknown,ActionType> 
  let AddLocationPathAC=(newMyLocation:Array<LocationType>):AddLocationPathACtype=>({type:LOCATION_ADD_PATH,newMyLocation})
- export let addLocationCrumbsThunk = (data:any)=>(dispatch:any)=>{
+ export let addLocationCrumbsThunk = (data:Array<LocationType>)=>(dispatch:any)=>{
    //debugger
  //   console.log("addLocationCrumbsThunk");
     dispatch(AddLocationPathAC(data));

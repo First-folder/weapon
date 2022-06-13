@@ -1,12 +1,55 @@
-import React, { useRef, useState } from "react"
+import React, { ComponentType, useRef, useState } from "react"
 import s from "./student.module.css"
 import { YMaps, Map, Placemark } from 'react-yandex-maps'
+import { compose } from "redux"
+import { RouteComponentProps, withRouter, WithRouterProps } from "react-router"
+import { connect } from "react-redux"
+import { AppStateType } from "../../redux/reducer_store"
+import { getCartReadItemsSelector } from "../../redux/Selectors"
+import { CartItem } from "../../redux/cart"
+type FunctionOneType = {
+  name:string
+ 
+}
+let function1:React.FC<C1Type> = (props)=>{
+  return(
+    <div>
+    
+        <div>   {console.log(props.match)
+                }  
+          </div>
+          <div>ghgh {console.log(props.location)}</div>
+          <div>ghgh {console.log(props.cart)}</div>
+          </div>
+      
+   
+  )
+}
+type C1Params ={
+  location:string
+ 
+ // match:any
+}
+type Function2Type = {
+  params:string
+}
+type C1Type = FunctionOneType & RouteComponentProps<C1Params> & MSTPType
+let function2 = ()=>{
+  return  {name:"params"} 
+}
+type MSTPType = {
+  cart:Array<CartItem>
+}
+let mapStateToPropsTest = (state:AppStateType)=>({
+    cart: getCartReadItemsSelector(state)
+})
+export let Function3 = compose<FunctionOneType & RouteComponentProps<C1Params> & MSTPType>(withRouter,connect(mapStateToPropsTest))(function1)
 
 type MainType={}
 
 export let Main :React.FC<any> = (props) =>{
     let [centerNew,EditCenter] = useState([55.167313, 61.395933]);
-    const RefMap = useRef(null)
+   
 
       return(
         <div   className={s.stypeMap}>
@@ -18,17 +61,15 @@ export let Main :React.FC<any> = (props) =>{
                                 center: centerNew,
                                 zoom: 16 ,                            
                                 type: 'yandex#map'
-                              } }                             
-                             // style={{width:"100%"}}
+                              } }                     
                               
                               height="300px"
                               width="100%" 
-                            //  onLoad={(ymaps) => getCoords(ymaps)}
-                            ref = {RefMap}
+                           
+                          
                              > 
         <Placemark
-        geometry={centerNew}
-       
+        geometry={centerNew}       
         properties={{
           hintContent: 'Собственный значок метки',
           balloonContent: 'Это красивая метка'

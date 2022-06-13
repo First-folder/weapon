@@ -32,7 +32,7 @@ let AdvertisingPromo:React.FC<AdvertisingPromoType> = (props)=>{
     return(
         <div> 
         
-        <h1> Акции </h1>    
+        <h1 className={s.headerh1}> Акции </h1>    
         <div className={s.promo}>
             {props.promo.map(p => p.active?  <Promo data={p}/>:<div></div>
             )}

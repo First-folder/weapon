@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React from "react"
+import React, { ComponentType } from "react"
 import { connect } from "react-redux"
 import { NavLink, withRouter, RouteComponentProps } from "react-router-dom"
 import { compose } from "redux"
@@ -9,19 +9,27 @@ import { getAuthenticationFamilySelector, getAuthenticationMailSelector, getAuth
 import s from "./auth.module.css"
 
 type AuthenticationContainerType = {
-    ChangeViewLoginClose:()=>void
+  //  ChangeViewLoginClose:()=>void
    Authentication:(login:string,pass:string)=>void
     auth:boolean
     name:string
     family:string   
-    history:any
+    LoginWindowClose:()=>void
+  //  history:any
+   
+}
+type AuthenticationContainerEXTERNALType = {
     LoginWindowClose:()=>void
 }
-
-class AuthenticationContainer extends React.Component<AuthenticationContainerType>{
-    componentDidMount(){      
+    
+type RouterPropsType = {
+    history:string
+}
+class AuthenticationContainer extends React.Component<ComposeType>{
+    componentDidMount(){   
+        console.log(this.props.match)   
     }
-    componentDidUpdate(prevProps:AuthenticationContainerType){
+    componentDidUpdate(prevProps:ComposeType){
         // на главную страницу после авторизации
         if(prevProps.auth != this.props.auth){
             //this.props.history.push('/')
@@ -78,7 +86,7 @@ class AuthenticationContainer extends React.Component<AuthenticationContainerTyp
 }
 
 type mapStateToPropsType = {
-    auth    :   boolean
+   auth    :   boolean
     name    :   string
     family  :   string
     phone   :   string
@@ -92,6 +100,15 @@ let mapStateToProps = (state:AppStateType):mapStateToPropsType => ({
     mail    :   getAuthenticationMailSelector(state)
 
 })
+type AuthRouteType={
+    location:string
+}
+type ComposeType = ComponentType<AuthenticationContainerEXTERNALType>& AuthenticationContainerEXTERNALType & AuthenticationContainerType  & RouteComponentProps
 
-type composeType = RouteComponentProps<AuthenticationContainerType>
-export default compose<composeType>(connect(mapStateToProps,{Authentication : AuthThunk}),withRouter)(AuthenticationContainer)
+
+//type w1Type = RouteComponentProps <AuthenticationContainerType>
+//let w1 =    withRouter(AuthenticationContainer)
+
+export default compose<ComposeType>(withRouter, connect(mapStateToProps,{Authentication : AuthThunk}))(AuthenticationContainer)
+
+       

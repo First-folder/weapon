@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import { AdvertisingType, SetAdvertisingThunk } from "../../redux/advertising";
 import { AppStateType } from "../../redux/reducer_store";
@@ -24,7 +24,7 @@ let ItemPromo:React.FC<ItemPromoType>=(props)=>{
    if (props.data.bodyAdvertising != null) placeBodyAdvertising = props.data.bodyAdvertising.map(p=><ItemAdvertisingBody itemBodyPromo = {p}/>)
     return(
         <div>
-                <div> <BreadCrumbsContainer/> </div>
+           
                 <div> <h1> {props.data.nameBanner} </h1> </div>
                 <div className={s.banner}> {props.data.pictureBanner == null? <img src={"http://localhost:3015/public/1/1212.jpg"}/>:<img src={props.data.pictureBanner}/>}</div>
                 <div className={s.wrapper_promo}>
@@ -47,15 +47,13 @@ let ItemPromo:React.FC<ItemPromoType>=(props)=>{
 }
 
 type ItemPromoContainerType = {
-    promoAll: Array<AdvertisingType>
-    match:any
-    location:any
-    history:any
+    promoAll: Array<AdvertisingType>   
    SetAdvertising:()=>void
 }
-class ItemPromoContainer extends React.Component<ItemPromoContainerType>{
+class ItemPromoContainer extends React.Component<ItemPromoContainerComposeType>{
    
     componentDidMount(){
+       
         //const { match, location, history } = this.props;
         console.log(this.props.match.params)
         let searchIdPromo = false;
@@ -83,7 +81,16 @@ class ItemPromoContainer extends React.Component<ItemPromoContainerType>{
         )
     }
 }
-let mapStateToProps = (state:AppStateType)=>({
+type mstp = {
+    promoAll:Array<AdvertisingType>
+}
+let mapStateToProps = (state:AppStateType):mstp=>({
     promoAll: getPromoAll(state)
 })
-export default compose(connect(mapStateToProps,{SetAdvertising:SetAdvertisingThunk}),withRouter)(ItemPromoContainer);
+type WithRouteItemPromoType = {
+    id : string
+}
+type ItemPromoContainerComposeType = ItemPromoContainerType & RouteComponentProps<WithRouteItemPromoType> 
+
+
+export default compose<ItemPromoContainerComposeType>(connect(mapStateToProps,{SetAdvertising:SetAdvertisingThunk}),withRouter)(ItemPromoContainer);
