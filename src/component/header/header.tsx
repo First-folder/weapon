@@ -12,7 +12,7 @@ type HeaderType={
     ChangeViewLoginClose:()=>void
    
     viewlogin :string
-    auth : string
+    auth : boolean
     name:string
     family:string
     login :string
@@ -39,10 +39,11 @@ let Header:React.FC<HeaderType> = (props) =>{
     return(
         <div className={s.wrapper}>
                 <div className={s.header}>
+                    <div className={s.smallmenu}> <FontAwesomeIcon icon={['fas','bars']}/> </div>
                     <div className={s.itemheader}><img src={logophoto}/></div>
                     <div className={s.itemheader}>
                    
-                        <div> <FontAwesomeIcon className={s.search} icon={['fas','search']}/> поиск по сайту  </div>
+                        <div> <FontAwesomeIcon className={s.search} icon={['fas','search']}/> <span className={s.searchlabel}>поиск по сайту </span> </div>
                         <div className={s.phone}><span>+(351)774-55-38</span></div>
                     </div>
                     <div className={s.itemheader}>
@@ -76,7 +77,7 @@ let Header:React.FC<HeaderType> = (props) =>{
                     }                   
                     
            </div>   
-         {props.viewlogin && <AuthenticationContainer LoginWindowClose={props.ChangeViewLoginClose}/>  }     
+         {props.viewlogin && <AuthenticationContainer LoginWindowClose={props.ChangeViewLoginClose} />  }     
         </div>
     )
 }

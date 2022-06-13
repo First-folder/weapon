@@ -106,3 +106,53 @@
 .navigation_company{
   
 }
+@media (max-width: 375px){
+    .wrapper{
+        height: 860px;
+        .helpFooter{
+            height: 230px;
+            .contentHelp{
+                flex-direction: column;
+                align-items: center;
+                .headerOne{
+                    display: flex;
+                    justify-content: center;
+                    .consultation:not(:last-child){
+                        margin-right: 3px;
+                    }
+                    .consultation{
+                        small{
+                        font-size: 16px ;
+                    }
+                    }
+                   
+                }
+                .contetntFooter{
+                    text-align: center;
+                    font-size: 12px;
+                }
+                .question{
+                    margin-top: 30px;
+                }
+
+            }
+        }
+
+
+
+        .content{
+            flex-direction: column;
+            align-items: center;
+            .contact{
+                flex-direction: column;
+                .adress{
+                    display: none;
+                }
+                .phones{
+                    text-align: center;
+                }
+
+            }
+        }
+    }
+}
