@@ -25,12 +25,12 @@ import AuthenticationContainer from './component/authentication/AuthenticationCo
 import RegistrationContainer from './component/registration/RegistrationContainer';
 import Personal from './component/personal/personal';
 import ProfileContainer from './component/personal/profile/profile';
-import { Main } from './component/student/student';
+import { Function3, Main } from './component/student/student';
 import CartContainer from './component/cart/cartContainer';
 import { Mains } from './component/student/studets';
 import { withAuthRedirect } from './hoc/withAuthredirect';
 
-library.add(fab,faCheckSquare, faCoffee,fas)
+library.add(fab,faCheckSquare, faCoffee, fas)
 
 class App extends React.Component {
   componentDidMount(){
@@ -46,7 +46,7 @@ class App extends React.Component {
               
               <Route path ="/workshop" render={()=><ArmoryWorkshopContainer/>}/>
               <Route path="/company" render={()=><CompanyContainer/>}/>
-              <Route exact path="/promo" render={()=><AdvertisingContainer/>}/>
+              <Route exact path="/promo" render={()=><AdvertisingContainer/>}/> 
               <Route path="/promo/elem/:id?" render={()=><ItemPromoContainer/>}/>
               <Route path={"/catalog"} render={()=> <CatalogContainer/>} /> 
               <Route path={"/delivery"} render={()=><DeliveryContainer/>}  />
@@ -60,11 +60,11 @@ class App extends React.Component {
               <Route exact path = {"/personal/profile/cart"} render={()=><CartContainer/>}/>
 
               <Route path = {"/student"} render={()=><Main/>}/>
-              <Route path = {"/students"} render={()=><Mains/>}/>
+              <Route path = {"/students"} render={()=><Function3/>}/>
           
           </div>
           
-          <Route path = {"/"} render ={()=> <FooterContainer/> }/>
+         <Route path = {"/"} render ={()=> <FooterContainer/> }/> 
         </div>
       )
     }
