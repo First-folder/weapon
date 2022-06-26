@@ -20,7 +20,7 @@ let NavBar = (props)=>{
                     <div className={props.pathname  ==="/contact" ? ns.activeitemnavbar: ns.itemnavbar}>    <NavLink to="/contact"> Контакты </NavLink></div>
                 </div>
                 <div className={ns.breadCrumbs}>
-                    <BreadCrumbsContainer/>
+                {/*    <BreadCrumbsContainer/> */}
                 </div>
       </div>    
     )
